@@ -8,9 +8,23 @@ if (process.argv.length > 2) {
     var httpServer = http.createServer(function (request, response) {
         response.writeHead(200, { 'Content-Type': 'application/json' });
 
-        request.pipe(map(function (chunk) {
-            return chunk.toString().toUpperCase();
-        })).pipe(response);
+        urlobj = url.parse(request.url, true);
+        var rstr;
+        var isotime = Date.parse(urlobj.query.iso);
+        if (urlobj.pathname == '/api/parsetime') {
+            var d = new Date(isotime);
+            rstr = {};
+            rstr['hour'] = d.getHours();
+            rstr['minute'] = d.getMinutes();
+            rstr['second'] = d.getSeconds();
+        } else if (urlobj.pathname == '/api/unixtime') {
+            rstr = {};
+            rstr['unixtime'] = isotime;
+        }
+        rstr = JSON.stringify(rstr);
+
+        response.write(rstr);
+        response.end();
     });
 
     httpServer.listen(port);
