@@ -1,14 +1,15 @@
 {
   "name": "@abhishek/how-to-npm",
-  "version": "1.0.0",
+  "version": "1.2.3",
   "description": "hello world",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test.js"
   },
   "author": "Abhishek Mishra",
   "license": "ISC",
   "dependencies": {
     "@linclark/pkg": "^1.0.2"
-  }
+  },
+  "repository": "https://github.com/abhishekmishra/learnnode.git"
 }
