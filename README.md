@@ -10,3 +10,6 @@ Too elementary; I'd already been programming js for a long time now - so not use
 
 ## how-to-npm
 This tutorial is also very elementary but informative.
+
+## scope-chains-closures
+Again a simple lesson, not much detail.
