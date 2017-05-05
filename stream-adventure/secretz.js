@@ -1,4 +1,3 @@
-
 var crypto = require('crypto');
 var tar = require('tar');
 var zlib = require('zlib');
@@ -9,13 +8,17 @@ var password = process.argv[3];
 
 var cryptoStream = crypto.createDecipher(cipherName, password);
 
-zlib.createGunzip()
-
-var md5stream = crypto.createHash('md5', { encoding: 'hex' });
-
 var parser = tar.Parse();
 parser.on('entry', function (e) {
-    return e.pipe(md5stream);
+    //console.log(e);
+    if (e.type === 'File') {
+        //console.log(e);
+        var md5stream = crypto.createHash('md5', { encoding: 'hex' });
+        e.pipe(md5stream).pipe(through2(function(buffer, enc, next) {
+            console.log(buffer.toString() + ' ' + e.path);
+        }));
+    }
 });
-var fs = require('fs');
-fs.createReadStream('file.tar').pipe(parser);
+
+process.stdin.pipe(cryptoStream).pipe(zlib.createGunzip())
+    .pipe(parser);
