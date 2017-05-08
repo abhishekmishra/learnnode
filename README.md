@@ -32,4 +32,4 @@ Still very useful.
 ## Electives
 
 ### functional-javascript-workshop
-Interseting totorial. Learnt call, bind and Function object.
+Interesting totorial. Learnt call, bind and Function object.
