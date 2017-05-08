@@ -30,3 +30,6 @@ Elementary stuff, I got to use some GFM specific syntax for the first time.
 Still very useful.
 
 ## Electives
+
+### functional-javascript-workshop
+Interseting totorial. Learnt call, bind and Function object.
