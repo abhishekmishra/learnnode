@@ -33,3 +33,7 @@ Still very useful.
 
 ### functional-javascript-workshop
 Interesting totorial. Learnt call, bind and Function object.
+
+### js-best-practices
+Not too much content here except some separation of concerns and a few 
+code improvements. (not deep)
