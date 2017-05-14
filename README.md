@@ -37,3 +37,6 @@ Interesting totorial. Learnt call, bind and Function object.
 ### js-best-practices
 Not too much content here except some separation of concerns and a few 
 code improvements. (not deep)
+
+### learnyouhtml
+Very simple stuff, learn about the new HTML5 tags.
